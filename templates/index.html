@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Fingerprint</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="font-family: Arial; background:#eef2f7; margin:0;">
+
+<!-- HEADER -->
+<div style="background: linear-gradient(90deg, #4facfe, #00f2fe); color:white; padding:20px; text-align:center;">
+    <h1>🌐 Network Fingerprint Generator</h1>
+</div>
+
+<div style="padding:20px; text-align:center;">
+
+    <!-- ANALYZE -->
+    <div style="margin-bottom:20px;">
+        <input id="url" placeholder="Enter URL"
+        style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;">
+
+        <button onclick="analyze()"
+        style="padding:10px 20px; border:none; border-radius:8px; background:#4facfe; color:white; cursor:pointer;">
+        🔍 Analyze
+        </button>
+    </div>
+
+    <!-- COMPARE -->
+    <div style="margin-bottom:20px;">
+        <input id="url1" placeholder="URL 1"
+        style="padding:10px; border-radius:8px; border:1px solid #ccc;">
+
+        <input id="url2" placeholder="URL 2"
+        style="padding:10px; border-radius:8px; border:1px solid #ccc;">
+         <p id="error" style="color:red;"></p>
+        <button onclick="compare()"
+        style="padding:10px 20px; border:none; border-radius:8px; background:#ff7e5f; color:white; cursor:pointer;">
+        ⚖️ Compare
+        </button>
+    </div>
+
+    <!-- OUTPUT -->
+    <div style="background:white; padding:15px; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <h3>📊 Output</h3>
+        <pre id="output" style="text-align:left;"></pre>
+    </div>
+
+    <!-- CHARTS -->
+    <div style="display:flex; justify-content:space-around; flex-wrap:wrap;">
+
+        <div style="background:white; padding:15px; border-radius:12px; margin:10px; width:300px;
+        box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3>🔵 Site 1</h3>
+            <canvas id="pie1"></canvas>
+            <canvas id="bar1"></canvas>
+        </div>
+
+        <div style="background:white; padding:15px; border-radius:12px; margin:10px; width:300px;
+        box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3>🔴 Site 2</h3>
+            <canvas id="pie2"></canvas>
+            <canvas id="bar2"></canvas>
+        </div>
+
+    </div>
+
+    <!-- TIMELINE -->
+    <div style="background:white; padding:15px; border-radius:12px; margin-top:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <h3>📈 Traffic Timeline</h3>
+        <canvas id="lineChart"></canvas>
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
